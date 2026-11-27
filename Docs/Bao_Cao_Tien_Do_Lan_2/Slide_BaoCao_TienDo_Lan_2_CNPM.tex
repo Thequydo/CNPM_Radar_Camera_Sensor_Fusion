@@ -33,11 +33,11 @@
 \graphicspath{{figures/}{./}}
 
 % ==============================================================================
-% Bảng màu & Giao diện chuẩn Khoa Điện tử (ĐHBK - ĐHĐN)
+% Bảng màu chuẩn Khoa Điện tử (ĐHBK - ĐHĐN)
 % ==============================================================================
 \definecolor{FacultyNavy}{RGB}{0, 0, 76}        % Xanh Navy chuẩn slide Khoa (#00004C)
 \definecolor{FacultyYellow}{RGB}{255, 191, 0}    % Vàng chuẩn slide Khoa (#FFBF00)
-\definecolor{DarkMain}{RGB}{20, 20, 20}         % Màu viền khối chính & tiêu đề mục
+\definecolor{DarkMain}{RGB}{20, 20, 20}         % Màu đen viền khung & tiêu đề (#141414)
 \definecolor{NavyDark}{RGB}{0, 0, 76}           % Đồng bộ Navy chuẩn
 \definecolor{TealAccent}{RGB}{255, 191, 0}      % Điểm nhấn vàng chuẩn
 \definecolor{BoxMain}{RGB}{225, 228, 233}       % Màu khối sơ đồ TikZ
@@ -45,7 +45,6 @@
 \definecolor{CodeBg}{RGB}{247, 248, 250}        % Màu nền khối mã nguồn
 \definecolor{TextDark}{RGB}{20, 20, 20}         % Màu chữ nội dung
 \definecolor{TextMuted}{RGB}{100, 102, 108}     % Màu chú thích / thứ cấp
-\definecolor{GreenMain}{RGB}{16, 130, 60}       % Xanh lá điểm nhấn thành công
 
 % ==============================================================================
 % Cấu hình giao diện Beamer
@@ -210,7 +209,7 @@
     \draw[FacultyYellow!70, line width=1.1pt] 
       ([shift={(1.0cm, -2.75cm)}]current page.north west) -- ([shift={(10.8cm, -2.75cm)}]current page.north west);
 
-    % 9. Tên đề tài chính (vàng nổi bật)
+    % 9. Tên đề tài chính
     \node[anchor=north west, text=FacultyYellow, font=\fontsize{15.0pt}{20.5pt}\selectfont\bfseries, text width=10.5cm] 
       at ([shift={(1.0cm, -3.30cm)}]current page.north west) {
       HỆ THỐNG GIÁM SÁT GIAO THÔNG VÀ CẢNH BÁO VA CHẠM DỰA TRÊN DUNG HỢP RADAR VÀ CAMERA
@@ -248,23 +247,23 @@
   \centering
   \begin{tabularx}{\textwidth}{@{} p{3.4cm} p{3.1cm} X c @{}}
     \toprule[1.0pt]
-    \textbf{Thành viên} & \textbf{Mảng phụ trách} & \textbf{Công việc kỹ thuật đã thực hiện} & \textbf{Tiến độ} \\
+    \textbf{Thành viên} & \textbf{Mảng phụ trách} & \textbf{Công việc kỹ thuật đã hoàn thành trong Giai đoạn 2} & \textbf{Tiến độ} \\
     \midrule[0.6pt]
     \textbf{Ngô Quang Thế}\newline{\fontsize{7.4pt}{9.0pt}\selectfont\color{TextMuted}(34\% --- \textit{Nhóm trưởng})} &
     Kiến trúc Hệ thống\newline\& Module CSDL Kép &
-    Xây dựng kiến trúc đa luồng, module CSDL kép MySQL \& SQLite tự động failover, phân quyền cô lập dữ liệu theo tài khoản, đóng gói file \code{.exe}. &
+    Tích hợp CSDL mạng MySQL tập trung qua XAMPP, cơ chế tự động Failover sang SQLite; lập trình phân quyền dữ liệu theo tài khoản; đóng gói file \code{.exe}. &
     \textbf{95\%} \\
     \midrule[0.3pt]
 
     \textbf{Lê Anh Khoa}\newline{\fontsize{7.4pt}{9.0pt}\selectfont\color{TextMuted}(33\%)} &
     Giao diện PyQt6\newline\& Radar Canvas 2D &
-    Thiết kế giao diện Desktop Responsive (1366$\times$768, 1920$\times$1080), đồ họa bản đồ Radar 2D thời gian thực qua QPainter, hệ thống cảnh báo đa giác quan. &
+    Tối ưu hóa giao diện đa độ phân giải (1366$\times$768 \& 1920$\times$1080); bản đồ Radar 2D QPainter thời gian thực; tích hợp đèn báo trạng thái CSDL trên Header. &
     \textbf{95\%} \\
     \midrule[0.3pt]
 
     \textbf{Huỳnh Ngọc Tịnh Phong}\newline{\fontsize{7.4pt}{9.0pt}\selectfont\color{TextMuted}(33\%)} &
-    Thị giác máy tính AI\newline\& Kiểm thử tự động &
-    Tích hợp YOLOv8n ONNX nhận diện phương tiện, kết nối phần cứng Radar HLK-LD2450 (UART 256000 bps), xây dựng bộ 53 bài kiểm thử tự động Pytest. &
+    Thị giác máy tính AI\newline\& Phần cứng Cảm biến &
+    Tối ưu nhận diện YOLOv8n ONNX trên luồng nền; kết nối và đo kiểm cảm biến Radar HLK-LD2450 (UART 256000 bps); kiểm chứng kịch bản va chạm video Nexar. &
     \textbf{95\%} \\
     \bottomrule[1.0pt]
   \end{tabularx}
@@ -281,7 +280,7 @@
   \begin{tabular}{@{} r @{\hspace{0.55cm}} l @{}}
     {\Large\bfseries\color{FacultyNavy}1.} & \textbf{\color{DarkMain}Tổng quan Đề tài \& Tiến độ Giai đoạn 2} \\[0.10cm]
     {\Large\bfseries\color{FacultyNavy}2.} & \textbf{\color{DarkMain}Kiến trúc Hệ thống \& Nâng cấp Kỹ thuật Mới} \\[0.10cm]
-    {\Large\bfseries\color{FacultyNavy}3.} & \textbf{\color{DarkMain}Triển khai Thực tế \& Kiểm thử Toàn diện} \\[0.10cm]
+    {\Large\bfseries\color{FacultyNavy}3.} & \textbf{\color{DarkMain}Triển khai Thực tế \& Kết quả Thực nghiệm} \\[0.10cm]
     {\Large\bfseries\color{FacultyNavy}4.} & \textbf{\color{DarkMain}Đánh giá Hiện trạng \& Kế hoạch Bảo vệ}
   \end{tabular}
   }
@@ -333,9 +332,9 @@
   \vspace{0.05cm}
   \centering
   \begin{tikzpicture}
-    \node[diagbox, text width=3.8cm, align=center, minimum height=0.45cm, inner sep=2.0pt] (b1) at (-4.0, 0)
+    \node[diagbox, text width=3.4cm, align=center, minimum height=0.45cm, inner sep=2.0pt] (b1) at (-4.5, 0)
       {{\fontsize{7.8pt}{9pt}\selectfont\bfseries Cảm biến hỗn hợp}\\[0.5pt]{\fontsize{6.5pt}{7.5pt}\selectfont\color{TextMuted} (Radar 24 GHz + Camera 1080p)}};
-    \node[subbox, text width=3.8cm, align=center, minimum height=0.45cm, inner sep=2.0pt] (b2) at (4.0, 0)
+    \node[subbox, text width=3.4cm, align=center, minimum height=0.45cm, inner sep=2.0pt] (b2) at (4.5, 0)
       {{\fontsize{7.8pt}{9pt}\selectfont\bfseries Phần mềm Giám sát AI}\\[0.5pt]{\fontsize{6.5pt}{7.5pt}\selectfont\color{TextMuted} (PyQt6 + Dual DB MySQL/SQLite)}};
 
     \draw[flowarrow] (b1.east) -- (b2.west)
@@ -350,8 +349,8 @@
   \begin{columns}[T, onlytextwidth]
     \begin{column}{0.488\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
-        top=3pt, bottom=3pt, left=6pt, right=6pt
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
+        top=3.5pt, bottom=3.5pt, left=6pt, right=6pt
       ]
         {\fontsize{8.0pt}{9.5pt}\selectfont\bfseries\color{DarkMain} Cảm biến Camera quang học}\\[2pt]
         {\fontsize{7.2pt}{9.0pt}\selectfont
@@ -363,8 +362,8 @@
     \end{column}
     \begin{column}{0.488\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
-        top=3pt, bottom=3pt, left=6pt, right=6pt
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
+        top=3.5pt, bottom=3.5pt, left=6pt, right=6pt
       ]
         {\fontsize{8.0pt}{9.5pt}\selectfont\bfseries\color{DarkMain} Cảm biến Radar sóng milimet (24 GHz)}\\[2pt]
         {\fontsize{7.2pt}{9.0pt}\selectfont
@@ -377,18 +376,23 @@
   \end{columns}
 
   \vspace{0.10cm}
-  \noindent{\fontsize{8.0pt}{9.8pt}\selectfont\textbf{Mục tiêu giải pháp:} Kết hợp ưu điểm của cả hai cảm biến để xây dựng hệ thống cảnh báo sớm va chạm theo thời gian thực ($TTC < 2.0$s) có độ tin cậy tuyệt đối.}
+  \begin{tcolorbox}[
+    enhanced, colback=DarkMain, colframe=white, boxrule=1.0pt, arc=3.5pt,
+    top=3.5pt, bottom=3.5pt, left=8pt, right=8pt
+  ]
+    {\fontsize{7.4pt}{9.2pt}\selectfont\color{white}\textbf{Mục tiêu giải pháp:} Kết hợp ưu thế của cả hai cảm biến để xây dựng hệ thống cảnh báo sớm va chạm theo thời gian thực ($TTC < 2.0$s) có độ tin cậy và khả năng chịu lỗi cao.}
+  \end{tcolorbox}
 \end{frame}
 
 % ------------------------------------------------------------------------------
-% SLIDE 6: MỤC TIÊU HỆ THỐNG & YÊU CẦU PHI CHỨC NĂNG
+% SLIDE 6: MỤC TIÊU HỆ THỐNG & YÊU CẦU KỸ THUẬT
 % ------------------------------------------------------------------------------
 \begin{frame}{Mục tiêu Hệ thống \& Yêu cầu Kỹ thuật}
   \vspace{0.10cm}
   \begin{columns}[T, onlytextwidth]
     \begin{column}{0.315\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=white, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=5pt, right=5pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{DarkMain} Mục tiêu 1: Giám sát \& Hiển thị}\\[3pt]
@@ -399,13 +403,13 @@
           \item Tương thích đa độ phân giải (1366$\times$768 và 1920$\times$1080).
         \end{itemize}}
         \vspace{2pt}
-        \hfill{\color{GreenMain}\textbf{\checkmark\ Hoàn thành}}
+        \hfill{\fontsize{7.0pt}{8.5pt}\selectfont\textbf{\color{DarkMain}[Đã hoàn thành]}}
       \end{tcolorbox}
     \end{column}
 
     \begin{column}{0.315\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=white, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=5pt, right=5pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{DarkMain} Mục tiêu 2: Cảnh báo Thời gian thực}\\[3pt]
@@ -416,13 +420,13 @@
           \item Phát âm thanh cảnh báo nhịp theo mức độ khẩn cấp.
         \end{itemize}}
         \vspace{2pt}
-        \hfill{\color{GreenMain}\textbf{\checkmark\ Hoàn thành}}
+        \hfill{\fontsize{7.0pt}{8.5pt}\selectfont\textbf{\color{DarkMain}[Đã hoàn thành]}}
       \end{tcolorbox}
     \end{column}
 
     \begin{column}{0.315\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=white, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=5pt, right=5pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{DarkMain} Mục tiêu 3: Quản trị \& CSDL Kép}\\[3pt]
@@ -433,7 +437,7 @@
           \item Xuất báo cáo sự cố định dạng CSV / Excel UTF-8 BOM chuẩn hóa.
         \end{itemize}}
         \vspace{2pt}
-        \hfill{\color{GreenMain}\textbf{\checkmark\ Hoàn thành}}
+        \hfill{\fontsize{7.0pt}{8.5pt}\selectfont\textbf{\color{DarkMain}[Đã hoàn thành]}}
       \end{tcolorbox}
     \end{column}
   \end{columns}
@@ -443,35 +447,35 @@
 % SLIDE 7: ĐỐI SÁNH TIẾN ĐỘ LẦN 1 VS LẦN 2
 % ------------------------------------------------------------------------------
 \begin{frame}{Đối sánh Tiến độ: Báo cáo Lần 1 vs Báo cáo Lần 2}
-  \vspace{0.10cm}
-  \renewcommand{\arraystretch}{1.38}
-  \fontsize{7.8pt}{10.2pt}\selectfont
+  \vspace{-0.15cm}
+  \renewcommand{\arraystretch}{1.28}
+  \fontsize{7.6pt}{9.8pt}\selectfont
   \centering
   \begin{tabularx}{\textwidth}{@{} p{2.8cm} p{4.2cm} X c @{}}
     \toprule[1.0pt]
-    \textbf{Hạng mục} & \textbf{Tiến độ Lần 1 (Khoảng 70\%)} & \textbf{Tiến độ Hiện tại Lần 2 (Đạt 95\% --- Hoàn thiện)} & \textbf{Mức tăng} \\
+    \textbf{Hạng mục} & \textbf{Tiến độ Lần 1 (Khoảng 70\%)} & \textbf{Các nội dung đã sửa đổi \& nâng cấp mới (Đạt 95\%)} & \textbf{Mức tăng} \\
     \midrule[0.6pt]
     \textbf{Cơ sở Dữ liệu} &
     Chỉ lưu trữ SQLite cục bộ trên một file \code{.db} đơn giản. &
-    Tích hợp CSDL mạng MySQL tập trung qua XAMPP, cơ chế Dual-Engine Proxy tự động failover sang SQLite. &
+    Tích hợp CSDL mạng MySQL tập trung qua XAMPP (Port 3306 \& phpMyAdmin 8080); cơ chế Dual-Engine tự động failover SQLite. &
     \textbf{+25\%} \\
     \midrule[0.3pt]
 
     \textbf{Phân quyền Người dùng} &
     Chưa phân quyền dữ liệu, tất cả người dùng dùng chung một bảng sự cố. &
-    Cô lập dữ liệu sự cố cá nhân hóa: Operator chỉ xem dữ liệu do mình ghi nhận; Admin xem toàn bộ và lọc theo user. &
+    Cô lập dữ liệu sự cố cá nhân hóa: Operator chỉ xem sự cố do chính mình giám sát; Admin xem toàn bộ và lọc theo user. &
     \textbf{+30\%} \\
     \midrule[0.3pt]
 
-    \textbf{Kiểm thử Tự động} &
-    Kiểm thử thủ công từng hàm đơn lẻ, chưa có kịch bản test tích hợp CSDL. &
-    Xây dựng hoàn chỉnh bộ 53/53 bài kiểm thử tự động Pytest (Unit, Integration, Security, MySQL Verification). &
-    \textbf{+25\%} \\
+    \textbf{Giao diện \& Hiển thị} &
+    Giao diện cố định kích thước, font chữ nhỏ dễ nhòe khi đổi màn hình. &
+    Tối ưu hóa Responsive đa độ phân giải (1366$\times$768 \& 1920$\times$1080); phông chữ sắc nét; tích hợp Badge đèn báo CSDL trực tiếp trên Header. &
+    \textbf{+20\%} \\
     \midrule[0.3pt]
 
     \textbf{Đóng gói \& Phát hành} &
     Chạy trực tiếp từ mã nguồn Python trong terminal. &
-    Đóng gói thành công Standalone Executable \code{GiamSatGiaoThong.exe} (129 MB) và đồng bộ mã nguồn lên GitHub. &
+    Đóng gói thành công Standalone Executable \code{GiamSatGiaoThong.exe} (129 MB) và đồng bộ toàn bộ tài liệu lên GitHub chính thức. &
     \textbf{+20\%} \\
     \bottomrule[1.0pt]
   \end{tabularx}
@@ -550,7 +554,7 @@
   \fontsize{7.6pt}{9.8pt}\selectfont
   \begin{itemize}
     \item \textbf{Tách biệt triệt để tác vụ nặng:} Các tác vụ I/O cổng nối tiếp (UART 256000 bps), nhận diện ảnh Deep Learning YOLOv8n và đọc/ghi CSDL đều chạy trên các \code{QThread} độc lập.
-    \item \textbf{Cơ chế giao tiếp an toàn (Thread-Safe):} Toàn bộ dữ liệu truyền lên giao diện qua hệ thống Qt Signal/Slot, đảm bảo UI phản hồi tức thì với tốc độ 30 FPS không bao giờ xảy ra hiện tượng "Not Responding".
+    \item \textbf{Cơ chế giao tiếp an toàn (Thread-Safe):} Toàn bộ dữ liệu truyền lên giao diện qua hệ thống Qt Signal/Slot, đảm bảo UI phản hồi tức thì với tốc độ 30 FPS không bao giờ xảy ra hiện tượng đóng băng ("Not Responding").
   \end{itemize}
 \end{frame}
 
@@ -562,7 +566,7 @@
   \begin{columns}[T, onlytextwidth]
     \begin{column}{0.485\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=6pt, right=6pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{FacultyNavy} Kiến trúc Dual-Engine DBProxy}\\[3pt]
@@ -577,7 +581,7 @@
 
     \begin{column}{0.485\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=6pt, right=6pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{FacultyNavy} Cấu trúc 5 Bảng Nghiệp vụ Chuẩn}\\[3pt]
@@ -596,10 +600,10 @@
   \vspace{0.10cm}
   \centering
   \begin{tcolorbox}[
-    enhanced, colback=GreenMain!10, colframe=GreenMain, boxrule=0.8pt, arc=2pt,
-    top=2pt, bottom=2pt, left=8pt, right=8pt
+    enhanced, colback=DarkMain, colframe=white, boxrule=1.0pt, arc=3.5pt,
+    top=3.5pt, bottom=3.5pt, left=8pt, right=8pt
   ]
-    {\fontsize{7.4pt}{9.2pt}\selectfont\color{GreenMain}\textbf{Chỉ báo CSDL trực quan trên Header:} Đèn báo trực tiếp \textbf{● CSDL: MySQL (traffic\_radar\_db)} hoặc \textbf{● CSDL: SQLite} giúp người dùng và giám khảo nhận biết ngay lập tức trạng thái kết nối.}
+    {\fontsize{7.4pt}{9.2pt}\selectfont\color{white}\textbf{Chỉ báo CSDL trực quan trên Header:} Đèn báo trực tiếp \textbf{● CSDL: MySQL (traffic\_radar\_db)} hoặc \textbf{● CSDL: SQLite} giúp người dùng và giám khảo nhận biết ngay lập tức trạng thái kết nối.}
   \end{tcolorbox}
 \end{frame}
 
@@ -611,7 +615,7 @@
   \begin{columns}[T, onlytextwidth]
     \begin{column}{0.485\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=6pt, right=6pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{DarkMain} 1. Tài khoản Nhân viên Vận hành (Operator)}\\[3pt]
@@ -627,7 +631,7 @@
 
     \begin{column}{0.485\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=6pt, right=6pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{DarkMain} 2. Tài khoản Quản trị viên (Admin)}\\[3pt]
@@ -642,12 +646,13 @@
     \end{column}
   \end{columns}
 
-  \vspace{0.15cm}
-  \raggedright
-  \noindent{\fontsize{8.0pt}{10.0pt}\selectfont\bfseries\color{FacultyNavy} Chuẩn hóa Báo cáo Xuất khẩu (Export Engine):}\par
-  \vspace{0.05cm}
-  {\fontsize{7.2pt}{9.0pt}\selectfont
-  Chức năng xuất báo cáo CSV và Excel (\code{.xlsx}) tự động lọc theo quyền hạn đăng nhập, tích hợp mã hóa \textbf{UTF-8 BOM (utf-8-sig)} chống lỗi font tiếng Việt trên Microsoft Excel, bổ sung cột \textit{"Tài khoản ghi nhận"} phục vụ thanh tra an toàn.}
+  \vspace{0.10cm}
+  \begin{tcolorbox}[
+    enhanced, colback=DarkMain, colframe=white, boxrule=1.0pt, arc=3.5pt,
+    top=3.5pt, bottom=3.5pt, left=8pt, right=8pt
+  ]
+    {\fontsize{7.3pt}{9.2pt}\selectfont\color{white}\textbf{Chuẩn hóa Báo cáo Xuất khẩu:} Tích hợp xuất file CSV và Excel (\code{.xlsx}) tự động lọc theo quyền hạn đăng nhập, tích hợp mã hóa \textbf{UTF-8 BOM (utf-8-sig)} chống lỗi font tiếng Việt và gắn kèm cột định danh tài khoản ca trực.}
+  \end{tcolorbox}
 \end{frame}
 
 % ------------------------------------------------------------------------------
@@ -683,7 +688,7 @@
       \noindent{\fontsize{8.5pt}{10.5pt}\selectfont\bfseries\color{DarkMain} 3. Ghép cặp Không gian -- Thời gian}\par
       \vspace{0.08cm}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=3pt, bottom=3pt, left=5pt, right=5pt
       ]
         {\fontsize{7.2pt}{9.0pt}\selectfont
@@ -729,7 +734,7 @@
       \begin{minipage}{14.5cm}
         \centering
         {\fontsize{14pt}{18pt}\selectfont\bfseries\color{FacultyYellow} PHẦN III}\\[0.30cm]
-        {\fontsize{22pt}{28pt}\selectfont\bfseries\color{FacultyNavy} Triển khai Thực tế \& Kiểm thử Toàn diện}\\[0.35cm]
+        {\fontsize{22pt}{28pt}\selectfont\bfseries\color{FacultyNavy} Triển khai Thực tế \& Kết quả Thực nghiệm}\\[0.35cm]
         {\color{FacultyYellow}\rule{4.5cm}{2.8pt}}
       \end{minipage}
     };
@@ -775,13 +780,13 @@
       \vspace{0.10cm}
       {\fontsize{7.5pt}{9.8pt}\selectfont
       \begin{itemize}
-        \item \textbf{Cấu trúc bảng 8 cột chuẩn:} ID, Tài khoản ghi nhận, Thời gian, Đối tượng, Cự ly (m), Tốc độ (km/h), TTC (s), Mức độ.
-        \item \textbf{Bộ lọc đa tiêu chí:}
+        \item \textbf{Cấu trúc bảng 8 cột chuẩn hóa:} ID, Tài khoản ghi nhận, Thời gian, Đối tượng, Cự ly (m), Tốc độ (km/h), TTC (s), Mức độ.
+        \item \textbf{Bộ lọc đa tiêu chí linh hoạt:}
           \begin{itemize}
             \item Lọc theo Mức độ: Tất cả / Cảnh báo / Báo động.
-            \item Lọc theo Ngày tháng.
+            \item Lọc theo Ngày tháng thực hiện giám sát.
             \item Tìm kiếm từ khóa đối tượng / ghi chú.
-            \item \textbf{Lọc theo Tài khoản (dành cho Admin):} Phân tích hiệu suất theo từng nhân viên trực.
+            \item \textbf{Lọc theo Tài khoản (dành cho Admin):} Phân tích hiệu suất theo từng nhân viên trực ca.
           \end{itemize}
         \item \textbf{Xem ảnh chụp sự cố (Snapshot):} Bấm đúp vào sự cố để mở ảnh bằng chứng va chạm.
       \end{itemize}}
@@ -797,12 +802,12 @@
   \begin{columns}[T, onlytextwidth]
     \begin{column}{0.52\textwidth}
       \centering
-      \includegraphics[width=\textwidth, height=4.9cm, keepaspectratio]{figures/com5_real_test.png}
+      \includegraphics[width=\textwidth, height=4.6cm, keepaspectratio]{figures/com5_real_test.png}
     \end{column}
 
     \begin{column}{0.46\textwidth}
-      \vspace{0.05cm}
-      {\fontsize{7.0pt}{8.8pt}\selectfont
+      \vspace{-0.20cm}
+      {\fontsize{6.6pt}{8.2pt}\selectfont
       \begin{itemize}
         \item \textbf{Cấu hình phần cứng thực tế:}
           \begin{itemize}
@@ -851,35 +856,49 @@
 \end{frame}
 
 % ------------------------------------------------------------------------------
-% SLIDE 18: BỘ KIỂM THỬ TỰ ĐỘNG 53/53 PYTEST
+% SLIDE 18: TỐI ƯU HÓA RESPONSIVE & XUẤT BÁO CÁO CHUẨN HÓA
 % ------------------------------------------------------------------------------
-\begin{frame}{Kiểm thử Tự động: 53/53 Test Pytest Đạt 100\%}
+\begin{frame}{Tối ưu hóa Giao diện Responsive \& Xuất Báo cáo Chuẩn hóa}
   \vspace{-0.15cm}
-  \renewcommand{\arraystretch}{1.28}
-  \fontsize{7.4pt}{9.2pt}\selectfont
-  \centering
-  \begin{tabularx}{\textwidth}{@{} l p{5.5cm} X c @{}}
-    \toprule[1.0pt]
-    \textbf{Tập tin Kiểm thử} & \textbf{Nội dung Kiểm thử Nghiệp vụ} & \textbf{Tiêu chí Đánh giá} & \textbf{Kết quả} \\
-    \midrule[0.6pt]
-    \code{test\_stage1\_radar.py} & Giải mã frame UART 0xAA 0xFF, lọc cự ly, tính góc & 11 kịch bản giải mã byte & \textbf{11/11 Pass} \\
-    \code{test\_stage2\_alert.py} & Ngưỡng khoảng cách, phân cấp cảnh báo, tính TTC & 8 ca kiểm thử va chạm & \textbf{8/8 Pass} \\
-    \code{test\_stage2a\_diagnostics.py} & Giám sát tình trạng phần cứng, cảnh báo mất kết nối & 9 ca kiểm thử ngoại lệ & \textbf{9/9 Pass} \\
-    \code{test\_stage3\_detector.py} & Nhận diện YOLOv8n ONNX, lọc Confidence, Non-Max Supp. & 8 ca kiểm thử thị giác & \textbf{8/8 Pass} \\
-    \code{test\_stage4\_fusion.py} & Ghép cặp không gian Radar--Camera, loại cảnh báo giả & 5 ca dung hợp cảm biến & \textbf{5/5 Pass} \\
-    \code{test\_stage6\_simulation.py} & Điều khiển luồng phát lại video và đồng bộ Radar CSV & 3 ca kiểm thử kịch bản & \textbf{3/3 Pass} \\
-    \code{test\_stage7\_security.py} & Mã hóa mật khẩu PBKDF2/SHA-256, kiểm soát phiên login & 5 ca kiểm thử bảo mật & \textbf{5/5 Pass} \\
-    \code{test\_stage8\_acceptance.py} & Kịch bản nghiệm thu liên tầng toàn hệ thống & 3 ca nghiệm thu & \textbf{3/3 Pass} \\
-    \code{test\_mysql\_live\_verification.py} & Kết nối MySQL live, cô lập dữ liệu theo từng tài khoản & Kiểm thử bảo mật CSDL & \textbf{1/1 Pass} \\
-    \bottomrule[1.0pt]
-  \end{tabularx}
+  \begin{columns}[T, onlytextwidth]
+    \begin{column}{0.485\textwidth}
+      \begin{tcolorbox}[
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
+        top=4pt, bottom=4pt, left=6pt, right=6pt
+      ]
+        {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{DarkMain} 1. Tối ưu Responsive Đa Màn hình}\\[3pt]
+        {\fontsize{7.0pt}{8.8pt}\selectfont
+        \begin{itemize}
+          \item \textbf{Khắc phục lỗi vỡ layout:} Tự động nhận diện và tương thích hoàn hảo giữa màn hình laptop \textbf{HD (1366$\times$768)} và máy chiếu phòng học \textbf{Full HD (1920$\times$1080)}.
+          \item \textbf{Co giãn đồ họa tự động:} Bản đồ Radar 2D và bảng số liệu Telemetry tự động cân đối kích thước mà không bị tràn màn hình.
+          \item \textbf{Phông chữ siêu nét (Crisp Typography):} Sử dụng phông Segoe UI Bold độ tương phản cao, nhãn nhận diện phương tiện hiển thị rõ ràng trên nền video.
+        \end{itemize}}
+      \end{tcolorbox}
+    \end{column}
+
+    \begin{column}{0.485\textwidth}
+      \begin{tcolorbox}[
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
+        top=4pt, bottom=4pt, left=6pt, right=6pt
+      ]
+        {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{DarkMain} 2. Xuất Báo cáo Thanh tra An toàn}\\[3pt]
+        {\fontsize{7.0pt}{8.8pt}\selectfont
+        \begin{itemize}
+          \item \textbf{Hỗ trợ 2 định dạng phổ biến:} Xuất dữ liệu tức thì ra file \code{.csv} và bảng tính Excel \code{.xlsx}.
+          \item \textbf{Xử lý triệt để lỗi tiếng Việt:} Sử dụng mã hóa \textbf{UTF-8 with BOM (utf-8-sig)}, giúp mở trực tiếp trên Microsoft Excel mà không bị lỗi font dấu.
+          \item \textbf{Phục vụ kiểm toán an toàn:} Bổ sung cột \textit{"Tài khoản ghi nhận"} và tự động trích xuất các thông số viễn trắc (TTC, cự ly, tốc độ) phục vụ đánh giá hậu kiểm.
+        \end{itemize}}
+      \end{tcolorbox}
+    \end{column}
+  \end{columns}
 
   \vspace{0.10cm}
+  \centering
   \begin{tcolorbox}[
-    enhanced, colback=GreenMain!10, colframe=GreenMain, boxrule=0.8pt, arc=2pt,
-    top=2pt, bottom=2pt, left=8pt, right=8pt
+    enhanced, colback=DarkMain, colframe=white, boxrule=1.0pt, arc=3.5pt,
+    top=3.5pt, bottom=3.5pt, left=8pt, right=8pt
   ]
-    {\fontsize{7.5pt}{9.2pt}\selectfont\color{GreenMain}\textbf{Tổng kết:} \textbf{53 passed in 1.84s} --- Đạt tỷ lệ bao phủ và tin cậy kỹ thuật 100\% toàn bộ các tầng hệ thống.}
+    {\fontsize{7.4pt}{9.2pt}\selectfont\color{white}\textbf{Đánh giá trải nghiệm người dùng (UX):} Thao tác mượt mà, thông tin hiển thị trực quan, hỗ trợ tối đa cho nhân viên trực ca trong việc nắm bắt nguy cơ giao thông.}
   \end{tcolorbox}
 \end{frame}
 
@@ -891,7 +910,7 @@
   \begin{columns}[T, onlytextwidth]
     \begin{column}{0.485\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=6pt, right=6pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{FacultyNavy} 1. Quản lý Mã nguồn trên GitHub}\\[3pt]
@@ -899,7 +918,7 @@
         \begin{itemize}
           \item \textbf{Kho lưu trữ chính thức:}
           \newline\href{https://github.com/Thequydo/CNPM_Radar_Camera_Sensor_Fusion}{\color{FacultyNavy}\textbf{Thequydo/CNPM\_Radar\_Camera\_Sensor\_Fusion}}
-          \item \textbf{Cấu trúc chuẩn hóa 147 tệp tin:} Toàn bộ mã nguồn, tài liệu SRS, tài liệu thiết kế UML, slide bài giảng Sommerville và 53 bài test.
+          \item \textbf{Cấu trúc chuẩn hóa 147 tệp tin:} Toàn bộ mã nguồn, tài liệu SRS, tài liệu thiết kế UML, slide bài giảng Sommerville.
           \item Tối ưu file \code{.gitignore} loại trừ các file binary nặng $> 100$MB.
         \end{itemize}}
       \end{tcolorbox}
@@ -907,7 +926,7 @@
 
     \begin{column}{0.485\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=6pt, right=6pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{FacultyNavy} 2. Đóng gói Standalone Executable}\\[3pt]
@@ -921,13 +940,13 @@
     \end{column}
   \end{columns}
 
-  \vspace{0.15cm}
+  \vspace{0.10cm}
   \centering
   \begin{tcolorbox}[
-    enhanced, colback=white, colframe=DarkMain, boxrule=0.8pt, arc=2pt,
-    top=3pt, bottom=3pt, left=8pt, right=8pt
+    enhanced, colback=DarkMain, colframe=white, boxrule=1.0pt, arc=3.5pt,
+    top=3.5pt, bottom=3.5pt, left=8pt, right=8pt
   ]
-    {\fontsize{7.2pt}{9.0pt}\selectfont\textbf{Khả năng bàn giao sản phẩm:} Phần mềm có thể triển khai thực tế trên máy tính trung tâm điều hành hoặc máy tính gắn trên xe (On-board Computer) với độ ổn định cao.}
+    {\fontsize{7.4pt}{9.2pt}\selectfont\color{white}\textbf{Khả năng bàn giao sản phẩm:} Phần mềm có thể triển khai thực tế trên máy tính trung tâm điều hành hoặc máy tính gắn trên xe (On-board Computer) với độ ổn định cao.}
   \end{tcolorbox}
 \end{frame}
 
@@ -975,14 +994,14 @@
   \begin{columns}[T, onlytextwidth]
     \begin{column}{0.485\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=6pt, right=6pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{DarkMain} 1. Khó khăn Kỹ thuật Đã Giải quyết}\\[3pt]
         {\fontsize{7.0pt}{8.8pt}\selectfont
         \begin{itemize}
           \item \textbf{Lệch tần số cảm biến:} Radar quét ở 10 Hz trong khi Camera hoạt động ở 30 FPS $\rightarrow$ Giải quyết bằng hàng đợi trượt (Sliding Buffer) đồng bộ thời gian thực.
-          \item \textbf{Xung đột cổng mạng máy chủ:} Cổng 80 bị chiếm dụng bởi phần mềm giám sát mạng PRTG $\rightarrow$ Cấu hình lại Apache sang cổng 8080 cho phpMyAdmin.
+          \item \textbf{Xung đột cổng mạng máy chủ:} Cổng 80 bị chiếm dụng bởi phần mềm PRTG $\rightarrow$ Cấu hình lại Apache sang cổng 8080 cho phpMyAdmin.
           \item \textbf{Nghẽn luồng giao diện khi truy vấn CSDL:} Thiết kế lớp Proxy non-blocking và luồng Async Logger độc lập.
         \end{itemize}}
       \end{tcolorbox}
@@ -990,7 +1009,7 @@
 
     \begin{column}{0.485\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=DarkMain!4, colframe=DarkMain, boxrule=0.85pt, arc=3pt,
+        enhanced, colback=white, colframe=DarkMain, boxrule=0.9pt, arc=3.2pt,
         top=4pt, bottom=4pt, left=6pt, right=6pt
       ]
         {\fontsize{8.2pt}{9.8pt}\selectfont\bfseries\color{DarkMain} 2. Đánh giá Khối lượng Hoàn thành}\\[3pt]
@@ -999,7 +1018,7 @@
           \item Đã hoàn thành \textbf{95\% -- 100\%} các chức năng cốt lõi theo đặc tả yêu cầu SRS.
           \item Phần mềm chạy mượt mà trên cả máy tính cấu hình văn phòng (CPU Intel Core i5 không cần GPU rời).
           \item Dữ liệu lưu trữ nhất quán, có khả năng sao lưu và khôi phục sự cố hoàn hảo giữa MySQL và SQLite.
-          \item Đạt 100\% các tiêu chuẩn kiểm thử tự động của học phần Công nghệ Phần mềm.
+          \item Đáp ứng đầy đủ các tiêu chuẩn kỹ thuật của đồ án học phần Công nghệ Phần mềm.
         \end{itemize}}
       \end{tcolorbox}
     \end{column}

@@ -330,7 +330,8 @@ Nhằm làm sáng tỏ tính khoa học và tính ưu việt của giải pháp 
 1. Góc phương vị của mục tiêu sau khi bù lệch không gian:
    $$	heta = rctan2(X_r + 	ext{Offset}_X, Y_r + 	ext{Offset}_Y)$$
 2. Tọa độ pixel ngang trên mặt phẳng ảnh camera (chiều rộng $W$ pixel, góc mở $HFOV$):
-   $$u_{proj} = rac{W}{2} \cdot \left[ 1 + rac{	an(	heta)}{	an(HFOV / 2)} ight]$$
+   $$u_{proj} = rac{W}{2} \cdot \left[ 1 + rac{	an(	heta)}{	an(HFOV / 2)} 
+ight]$$
 3. Điều kiện lọc góc lệch (Angle Gating): $|	heta| \le HFOV / 2$. Nếu vượt quá góc mở, đối tượng nằm ngoài tầm nhìn camera.
 
 Bài toán Ghép cặp Cảm biến (Sensor Association): Giả sử tại thời điểm $t$, Camera phát hiện $M$ bounding boxes $B_i$ (tâm $x_i$, chiều rộng $w_i$) và Radar cung cấp $N$ điểm mục tiêu $P_j$ (tọa độ chiếu $u_j$). Ma trận chi phí ghép cặp $C_{ij}$ được xác định:
@@ -679,7 +680,7 @@ Dưới góc nhìn khoa học khách quan, nhóm thẳng thắn chỉ ra các h�
 Nhằm phục vụ công tác kiểm tra, thẩm định và tái lập kết quả khoa học của Hội đồng chấm điểm, toàn bộ mã nguồn chương trình, bộ kiểm thử tự động 52 bài test, tệp cấu hình đóng gói PyInstaller, bộ dữ liệu đo kiểm thực nghiệm gốc (`traffic_radar_system.db`, `background.json`, `captures/`) và 10 tệp ảnh biểu đồ UML được lưu trữ công khai hoàn toàn trên kho lưu trữ trực tuyến:
 
 > **LIÊN KẾT KHO MÃ NGUỒN VÀ DỮ LIỆU ĐỒ ÁN:**  
-> • **Kho lưu trữ GitHub:** https://github.com/KhoaLe246205/CNPM_Radar_Camera_Sensor_Fusion  
+> • **Kho lưu trữ GitHub:** https://github.com/Thequydo/CNPM_Radar_Camera_Sensor_Fusion  
 > • **Đường dẫn tệp thực thi cục bộ:** [GiamSatGiaoThong.exe](file:///C:/DAIHOC/CNPM_Project/GiamSatGiaoThong.exe)  
 > • **Đường dẫn tệp báo cáo Word:** [Bao_Cao_Tong_Hop_Do_An_CNPM_Radar_Camera.docx](file:///C:/DAIHOC/CNPM_Project/Docs/Bao_Cao_Tong_Hop_Do_An_CNPM_Radar_Camera.docx)  
 > • **Đường dẫn tệp báo cáo Markdown:** [Bao_Cao_Tong_Hop_Do_An_CNPM_Radar_Camera.md](file:///C:/DAIHOC/CNPM_Project/Docs/Bao_Cao_Tong_Hop_Do_An_CNPM_Radar_Camera.md)

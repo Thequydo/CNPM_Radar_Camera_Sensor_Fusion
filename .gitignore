@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller build artifacts & standalone executables
+build/
+dist/
+*.pkg
+GiamSatGiaoThong.exe
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs and runtime databases
+*.log
+logs/
+*.db
+*.db.bak
+test_empty.db
+traffic_monitor.db
+traffic_radar_system.db
+traffic_radar_system.db.bak
+
+# Captures / temporary outputs
+captures/
+.user_uploaded/
+
+# Environments & IDEs
+.env
+.venv
+env/
+venv/
+.idea/
+.vscode/
+*.swp
+
+~$*

@@ -1,0 +1,6 @@
+{
+    "grid_size_m": 0.1,
+    "occupancy_ratio": 0.7,
+    "tolerance_m": 0.15,
+    "points": []
+}
